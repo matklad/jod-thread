@@ -1,0 +1,13 @@
+[package]
+name = "jod-thread"
+version = "0.1.0"
+authors = ["Aleksey Kladov <aleksey.kladov@gmail.com>"]
+edition = "2018"
+license = "MIT OR Apache-2.0"
+description = "std::thread which joins on drop by default."
+
+readme = "README.md"
+documentation = "https://docs.rs/jod-thread"
+repository = "https://github.com/matklad/jod-thread"
+keywords = ["thread", "join", "structured", "concurrency" ]
+categories = [ "rust-patterns", "concurrency" ]
