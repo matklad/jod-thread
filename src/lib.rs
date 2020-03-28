@@ -1,9 +1,17 @@
 //! **J**oin **O**n **D**rop thread (`jod_thread`) is a thin wrapper around `std::thread`,
 //! which makes sure that by default all threads are joined.
 
+use std::fmt;
+
 /// Like `thread::JoinHandle`, but joins the thread on drop and propagates
 /// panics by default.
 pub struct JoinHandle<T>(Option<std::thread::JoinHandle<T>>);
+
+impl<T> fmt::Debug for JoinHandle<T> {
+    fn fmt(&self, f: &mut fmt::Formatter<'_>) -> fmt::Result {
+        f.pad("JoinHandle { .. }")
+    }
+}
 
 impl<T> Drop for JoinHandle<T> {
     fn drop(&mut self) {
